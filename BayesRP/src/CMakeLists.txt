@@ -1,4 +1,4 @@
-project(brr)
+project(brp)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 

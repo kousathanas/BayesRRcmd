@@ -59,7 +59,7 @@ if(ENABLE_FLOW_GRAPH_TRACING)
     add_definitions(-DTBB_PREVIEW_ALGORITHM_TRACE)
 endif()
 
-add_subdirectory(src)
+add_subdirectory(BayesRP/src)
 
 if(ENABLE_UNIT_TESTS)
     add_subdirectory(test)
