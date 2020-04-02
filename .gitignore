@@ -4,12 +4,15 @@
 
 /Debug/
 *.o
+*.d
 CMakeLists.txt.user
 gctb
 brr
 *.ppbed
 *.sqnorm
 *~
+*.out
+*.err
 *.optrpt
 /MR_ADV/
 
@@ -22,3 +25,8 @@ brr
 *.ppbedindex
 *.sparsebed
 *.sparsebedindex
+slurm-*.out
+bayesOutput_??.*
+/test/
+src/mpi_gibbs*
+tbb
