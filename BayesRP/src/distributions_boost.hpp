@@ -15,21 +15,16 @@
 #include "boost/generator_iterator.hpp"
 
 class Distributions_boost{
-#ifndef USE_MPI
-    boost::mt19937 rng;
-#endif
     unsigned int seed;
 public:
-    //Distributions_boost(unsigned int seed);
+    Distributions_boost(unsigned int seed);
     Distributions_boost();
     virtual ~Distributions_boost();
-#ifdef USE_MPI
     boost::mt19937 rng;
     void reset_rng(unsigned int seed);
     void write_rng_state_to_file(const std::string rngfp);
     void read_rng_state_from_file(const std::string rngfp);
 
-#endif
     double rgamma(double shape, double scale);
     Eigen::VectorXd dirichlet_rng(Eigen::VectorXd alpha);
     double inv_gamma_rng(double shape,double scale);

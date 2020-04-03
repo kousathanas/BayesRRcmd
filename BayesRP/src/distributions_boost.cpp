@@ -17,12 +17,12 @@
 
 using namespace std;
 
-/*
+
 Distributions_boost::Distributions_boost(unsigned int pseed):seed(pseed){
     std::cout << "Initiating dist.rng with pseed = " << pseed << std::endl;
     rng = boost::mt19937(seed);
 }
-*/
+
 
 Distributions_boost::Distributions_boost() {
     rng = boost::mt19937(0);
@@ -71,16 +71,6 @@ Eigen::VectorXd Distributions_boost::dirichlet_rng(Eigen::VectorXd alpha) {
     Eigen::VectorXd result(len);
     for(int i=0;i<len;i++)
         result[i]=rgamma((double)alpha[i], 1.0);
-    result/=result.sum();
-    return result;
-}
-
-Eigen::VectorXd Distributions_boost::dirichlet_rng(Eigen::VectorXd alpha) {
-    int len;
-    len=alpha.size();
-    Eigen::VectorXd result(len);
-    for(int i=0; i<len; i++)
-        result[i]=rgamma(alpha[i],(double)1.0);
     result/=result.sum();
     return result;
 }
